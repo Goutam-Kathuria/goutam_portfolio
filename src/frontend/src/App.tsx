@@ -23,19 +23,19 @@ const PROFILE_IMAGE = "/assets/uploads/me.png";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
 const SECTION_IDS = [
   "home",
-  "about",
-  "skills",
   "projects",
   "experience",
+  "skills",
+  "about",
   "contact",
 ];
 
@@ -998,12 +998,13 @@ export default function App() {
       <main>
         <HeroSection />
         <SectionSeparator />
-        <AboutSection />
-        <SkillsSection />
-        <SectionSeparator />
         <ProjectsSection />
         <SectionSeparator />
         <ExperienceSection />
+        <SectionSeparator />
+        <SkillsSection />
+        <SectionSeparator />
+        <AboutSection />
         <SectionSeparator />
         <EducationSection />
         <CTASection />
