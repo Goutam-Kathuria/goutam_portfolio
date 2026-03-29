@@ -399,6 +399,25 @@ function HeroSection() {
   );
 }
 
+const ABOUT_HIGHLIGHTS = [
+  {
+    label: "Experience",
+    text: "1 year of professional MERN development with backend-first ownership.",
+  },
+  {
+    label: "Production Work",
+    text: "Delivered 3+ real-world applications across grocery delivery, event management, and classifieds.",
+  },
+  {
+    label: "Backend Strengths",
+    text: "Built REST APIs, JWT auth, RBAC, middleware, admin workflows, and MongoDB data models.",
+  },
+  {
+    label: "Execution",
+    text: "Focused on scalable backend logic, API reliability, debugging, and production-ready delivery.",
+  },
+];
+
 function AboutSection() {
   return (
     <section id="about" className="py-16">
@@ -429,34 +448,27 @@ function AboutSection() {
           {/* Text */}
           <motion.div variants={itemVariants} className="flex-1">
             <h3 className="text-xl font-semibold text-foreground mb-4">
-              MERN Stack Developer · Backend Specialist
+              Backend-focused MERN developer with hands-on production experience
             </h3>
-            <p className="text-foreground/75 leading-relaxed mb-4">
-              I'm a MERN Stack Developer with 1 year of professional experience,
-              focused on building scalable backend systems, REST APIs, and
-              production-level applications.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              I've worked on real-world platforms including a{" "}
-              <span className="text-cyan font-medium">
-                grocery delivery platform
-              </span>{" "}
-              (like Blinkit/Zomato) with admin & seller panels, an{" "}
-              <span className="text-cyan font-medium">
-                event-based platform
-              </span>{" "}
-              with full admin control, and{" "}
-              <span className="text-cyan font-medium">Fivlia Connect</span> — an
-              OLX-like classified ads system.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              I'm a fast learner who continuously improves through real-world
-              projects, with a strong focus on backend architecture, API design,
-              and system optimization.
-            </p>
+            <ul className="space-y-3">
+              {ABOUT_HIGHLIGHTS.map((item) => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <div
+                    className="mt-1.5 h-2 w-2 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: "var(--primary-color)" }}
+                  />
+                  <p className="text-sm leading-relaxed">
+                    <span className="font-semibold text-foreground">
+                      {item.label}:
+                    </span>{" "}
+                    <span className="text-muted-foreground">{item.text}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
 
             {/* Quick stats */}
-            <div className="mt-6 flex flex-wrap gap-4">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
                 { label: "Experience", value: "1 Year" },
                 { label: "Projects", value: "3+ Production" },
@@ -482,57 +494,85 @@ function AboutSection() {
   );
 }
 
-const SKILLS = [
+const SKILL_GROUPS = [
   {
-    category: "Backend",
+    level: "Core",
     icon: Server,
+    title: "Backend & APIs",
+    summary: "Technologies I can use confidently to build and own backend systems.",
     skills: [
       "Node.js",
       "Express.js",
       "REST APIs",
       "JWT Authentication",
-      "bcrypt",
+      "MongoDB",
+      "Mongoose ODM",
       "Middleware",
     ],
   },
   {
-    category: "Frontend",
-    icon: Code2,
-    skills: ["React.js", "HTML5", "CSS3", "JavaScript (ES6+)", "Tailwind CSS"],
-  },
-  {
-    category: "Database",
+    level: "Strong",
     icon: Database,
-    skills: ["MongoDB", "Mongoose ODM", "Database Schema Design"],
+    title: "Application Development",
+    summary: "Tools I use comfortably to ship complete product features and admin flows.",
+    skills: [
+      "React.js",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "Git",
+      "GitHub",
+      "Postman",
+      "Database Schema Design",
+    ],
   },
   {
-    category: "Tools",
-    icon: Wrench,
-    skills: ["Git", "GitHub", "Postman", "VS Code", "npm"],
+    level: "Familiar",
+    icon: Code2,
+    title: "Broader Exposure",
+    summary: "Supporting tools and technologies I can work with but do not position as my strongest edge.",
+    skills: [
+      "HTML5",
+      "CSS3",
+      "npm",
+      "VS Code",
+      "React Native",
+    ],
   },
+];
+
+const BACKEND_GAPS = [
+  "Docker",
+  "Redis / caching",
+  "Testing with Jest or Supertest",
+  "CI/CD pipelines",
+  "PostgreSQL / SQL",
 ];
 
 function SkillsSection() {
   return (
     <section id="skills" className="py-16">
       <div className="max-w-[1200px] mx-auto px-6">
-        <SectionHeading>Technical Skills</SectionHeading>
+        <SectionHeading>Technical Strengths</SectionHeading>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5"
+          className="grid grid-cols-1 xl:grid-cols-3 gap-5"
         >
-          {SKILLS.map((group) => {
+          {SKILL_GROUPS.map((group) => {
             const Icon = group.icon;
+            const isCore = group.level === "Core";
+
             return (
               <motion.div
-                key={group.category}
+                key={group.level}
                 variants={itemVariants}
-                className="rounded-xl border border-border bg-card p-6 shadow-card hover:border-cyan transition-colors group cursor-default"
+                className={`rounded-xl border bg-card p-6 shadow-card transition-colors group cursor-default ${
+                  isCore ? "border-cyan" : "border-border hover:border-cyan"
+                }`}
               >
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-start gap-3 mb-5">
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center transition-colors"
                     style={{
@@ -542,9 +582,17 @@ function SkillsSection() {
                   >
                     <Icon className="w-4 h-4 text-cyan" />
                   </div>
-                  <h3 className="font-semibold text-foreground">
-                    {group.category}
-                  </h3>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan">
+                      {group.level}
+                    </p>
+                    <h3 className="mt-2 font-semibold text-foreground">
+                      {group.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {group.summary}
+                    </p>
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
@@ -564,6 +612,48 @@ function SkillsSection() {
             );
           })}
         </motion.div>
+
+        {/* <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="mt-6 rounded-xl border border-border bg-card p-6 shadow-card"
+        >
+          <div className="flex items-start gap-3">
+            <div
+              className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{
+                background:
+                  "color-mix(in oklch, var(--primary-color) 12%, transparent)",
+              }}
+            >
+              <Wrench className="w-4 h-4 text-cyan" />
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan">
+                Worth Adding
+              </p>
+              <h3 className="mt-2 font-semibold text-foreground">
+                Backend role boosters
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                These are the biggest additions that would strengthen your
+                backend positioning for more demanding roles.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {BACKEND_GAPS.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 rounded-full text-xs font-medium border border-border text-foreground/80 bg-muted/50"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div> */}
       </div>
     </section>
   );
@@ -812,10 +902,10 @@ function CTASection() {
               "0 0 40px color-mix(in oklch, var(--primary-color) 10%, transparent)",
           }}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
             Let's build something impactful
           </h2>
-          <p className="text-foreground/75 text-lg mb-8">
+          <p className="text-white/75 text-lg mb-8">
             Open for MERN / Backend roles and freelance opportunities
           </p>
           <button
