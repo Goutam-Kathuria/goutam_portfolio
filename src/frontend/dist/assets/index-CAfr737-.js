@@ -22368,7 +22368,7 @@ function LoadingScreen() {
     "loading-screen"
   ) : null });
 }
-const PROFILE_IMAGE = "/assets/uploads/design-preview.jpg";
+const PROFILE_IMAGE = "/assets/uploads/me.png";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -22593,7 +22593,7 @@ function HeroSection() {
                 {
                   src: PROFILE_IMAGE,
                   alt: "Goutam Kathuria",
-                  className: "w-full h-full rounded-full object-cover border-2 border-cyan relative z-10",
+                  className: "w-full h-full rounded-full object-cover object-[center_14%] border-2 border-cyan relative z-10",
                   style: {
                     boxShadow: "0 0 30px color-mix(in oklch, var(--primary-color) 30%, transparent)"
                   }
@@ -22619,7 +22619,7 @@ function HeroSection() {
               initial: { opacity: 0, y: 20 },
               animate: { opacity: 1, y: 0 },
               transition: { delay: 0.3, duration: 0.6 },
-              className: "text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-foreground leading-tight tracking-tight mb-5",
+              className: "text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-white leading-tight tracking-tight mb-5",
               children: "Goutam Kathuria"
             }
           ),
@@ -22629,7 +22629,7 @@ function HeroSection() {
               initial: { opacity: 0, y: 20 },
               animate: { opacity: 1, y: 0 },
               transition: { delay: 0.4, duration: 0.6 },
-              className: "text-lg md:text-xl font-medium text-foreground/80 mb-4 max-w-lg",
+              className: "text-lg md:text-xl font-medium text-white/80 mb-4 max-w-lg",
               children: "MERN Stack Developer specializing in scalable backend systems"
             }
           ),
@@ -22639,7 +22639,7 @@ function HeroSection() {
               initial: { opacity: 0, y: 20 },
               animate: { opacity: 1, y: 0 },
               transition: { delay: 0.5, duration: 0.6 },
-              className: "text-muted-foreground text-base mb-8 max-w-md leading-relaxed",
+              className: "text-white/65 text-base mb-8 max-w-md leading-relaxed",
               children: "I build efficient APIs, backend logic, and real-world applications"
             }
           ),
@@ -22699,7 +22699,7 @@ function HeroSection() {
                     rel: "noopener noreferrer",
                     "data-ocid": "hero.link",
                     "data-cursor-hover": true,
-                    className: "w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all",
+                    className: "w-10 h-10 rounded-lg border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/65 hover:text-cyan hover:border-cyan hover:bg-white/[0.06] transition-all",
                     children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-5 h-5" })
                   }
                 ),
@@ -22711,7 +22711,7 @@ function HeroSection() {
                     rel: "noopener noreferrer",
                     "data-ocid": "hero.link",
                     "data-cursor-hover": true,
-                    className: "w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all",
+                    className: "w-10 h-10 rounded-lg border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/65 hover:text-cyan hover:border-cyan hover:bg-white/[0.06] transition-all",
                     children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-5 h-5" })
                   }
                 )
@@ -22740,7 +22740,7 @@ function AboutSection() {
             {
               src: PROFILE_IMAGE,
               alt: "Goutam Kathuria",
-              className: "w-full h-full rounded-full object-cover border-2 border-cyan",
+              className: "w-full h-full rounded-full object-cover object-[center_14%] border-2 border-cyan",
               style: {
                 boxShadow: "0 0 20px color-mix(in oklch, var(--primary-color) 25%, transparent)"
               }
@@ -23161,9 +23161,6 @@ function ContactSection() {
 }
 function Footer() {
   const year = (/* @__PURE__ */ new Date()).getFullYear();
-  const hostname = encodeURIComponent(
-    typeof window !== "undefined" ? window.location.hostname : ""
-  );
   return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "border-t border-border bg-card mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-6 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-foreground font-bold text-lg", children: "Goutam Kathuria" }),
@@ -23172,19 +23169,7 @@ function Footer() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-muted-foreground text-xs", children: [
       "© ",
       year,
-      ".",
-      " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "a",
-        {
-          href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${hostname}`,
-          target: "_blank",
-          rel: "noopener noreferrer",
-          "data-cursor-hover": true,
-          className: "hover:text-cyan transition-colors",
-          children: "Built with ♥ using caffeine.ai"
-        }
-      )
+      ". Built and designed by Goutam Kathuria."
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
