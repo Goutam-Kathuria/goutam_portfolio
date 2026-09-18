@@ -1,7 +1,7 @@
 import {
   ChevronRight,
-  Code2,
   Database,
+  Download,
   ExternalLink,
   Github,
   Linkedin,
@@ -20,6 +20,7 @@ import CustomCursor from "./components/CustomCursor";
 import LoadingScreen from "./components/LoadingScreen";
 
 const PROFILE_IMAGE = "/assets/uploads/me.png";
+const RESUME_PATH = "/resume.pdf";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -27,6 +28,7 @@ const NAV_LINKS = [
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -36,6 +38,7 @@ const SECTION_IDS = [
   "experience",
   "skills",
   "about",
+  "education",
   "contact",
 ];
 
@@ -320,7 +323,7 @@ function HeroSection() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-lg md:text-xl font-medium text-white/80 mb-4 max-w-lg"
               >
-                MERN Stack Developer specializing in scalable backend systems
+                Full Stack Developer — React.js, Next.js, Vue.js, Node.js & APIs
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -328,8 +331,7 @@ function HeroSection() {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="text-white/65 text-base mb-8 max-w-md leading-relaxed"
               >
-                I build efficient APIs, backend logic, and real-world
-                applications
+                I build production web applications, backend systems, admin panels, AI integrations, and workflow automation.
               </motion.p>
 
               {/* Buttons */}
@@ -352,6 +354,15 @@ function HeroSection() {
                 >
                   View Projects <ChevronRight className="w-4 h-4" />
                 </button>
+                <a
+                  href={RESUME_PATH}
+                  download="Goutam-Kathuria-Resume.pdf"
+                  data-ocid="hero.resume_button"
+                  data-cursor-hover
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 bg-white/[0.04] text-white font-semibold text-sm hover:border-cyan hover:text-cyan hover:scale-[1.03] transition-all"
+                >
+                  Download Resume <Download className="w-4 h-4" />
+                </a>
                 <button
                   type="button"
                   onClick={() => scrollTo("contact")}
@@ -401,20 +412,20 @@ function HeroSection() {
 
 const ABOUT_HIGHLIGHTS = [
   {
-    label: "Experience",
-    text: "1 year of professional MERN development with backend-first ownership.",
+    label: "Full Stack Development",
+    text: "Build production applications across React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB.",
   },
   {
-    label: "Production Work",
-    text: "Delivered 3+ real-world applications across grocery delivery, event management, and classifieds.",
+    label: "Production Systems",
+    text: "Worked on healthcare, commerce, business management, admin dashboards, and automation products with real operational workflows.",
   },
   {
-    label: "Backend Strengths",
-    text: "Built REST APIs, JWT auth, RBAC, middleware, admin workflows, and MongoDB data models.",
+    label: "Integrations & Automation",
+    text: "Worked with Meta and Google integrations, lead platforms, social analytics, n8n workflows, webhooks, and business-specific automation.",
   },
   {
-    label: "Execution",
-    text: "Focused on scalable backend logic, API reliability, debugging, and production-ready delivery.",
+    label: "AI & Product Engineering",
+    text: "Built AI-enabled workflows using hosted models and local LLM tooling, alongside backend APIs, dynamic theming, analytics, and custom admin systems.",
   },
 ];
 
@@ -448,7 +459,7 @@ function AboutSection() {
           {/* Text */}
           <motion.div variants={itemVariants} className="flex-1">
             <h3 className="text-xl font-semibold text-foreground mb-4">
-              Backend-focused MERN developer with hands-on production experience
+              Full Stack Developer with hands-on production experience across web platforms, admin systems, integrations, and automation
             </h3>
             <ul className="space-y-3">
               {ABOUT_HIGHLIGHTS.map((item) => (
@@ -470,9 +481,9 @@ function AboutSection() {
             {/* Quick stats */}
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
-                { label: "Experience", value: "1 Year" },
-                { label: "Projects", value: "3+ Production" },
-                { label: "Focus", value: "Backend & APIs" },
+                { label: "Experience", value: "1+ Year" },
+                { label: "Focus", value: "Full Stack + APIs" },
+                { label: "Specialization", value: "AI, Integrations & Automation" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -498,54 +509,57 @@ const SKILL_GROUPS = [
   {
     level: "Core",
     icon: Server,
-    title: "Backend & APIs",
-    summary: "Technologies I can use confidently to build and own backend systems.",
+    title: "Full Stack Engineering",
+    summary:
+      "Building production web applications, backend services, APIs, and data-driven admin systems.",
     skills: [
+      "JavaScript (ES6+)",
+      "React.js",
+      "Next.js",
+      "Vue.js",
       "Node.js",
       "Express.js",
-      "REST APIs",
-      "JWT Authentication",
       "MongoDB",
-      "Mongoose ODM",
-      "Middleware",
+      "Mongoose",
+      "REST APIs",
     ],
   },
   {
-    level: "Strong",
+    level: "Production",
     icon: Database,
-    title: "Application Development",
-    summary: "Tools I use comfortably to ship complete product features and admin flows.",
+    title: "Product & System Development",
+    summary:
+      "Hands-on work across business platforms, dashboards, CMS-style controls, and complex application workflows.",
     skills: [
-      "React.js",
-      "JavaScript (ES6+)",
-      "Tailwind CSS",
-      "Git",
-      "GitHub",
-      "Postman",
-      "Database Schema Design",
+      "Admin Panels",
+      "Analytics Dashboards",
+      "Dynamic Theming",
+      "Role-Based Systems",
+      "Multi-Vendor Systems",
+      "Payment Integrations",
+      "AWS S3",
+      "Database Architecture",
     ],
   },
   {
-    level: "Familiar",
-    icon: Code2,
-    title: "Broader Exposure",
-    summary: "Supporting tools and technologies I can work with but do not position as my strongest edge.",
+    level: "Integrations",
+    icon: Wrench,
+    title: "AI, APIs & Automation",
+    summary:
+      "Connecting external platforms and AI services to custom backend workflows through APIs, webhooks, and automation engines.",
     skills: [
-      "HTML5",
-      "CSS3",
-      "npm",
-      "VS Code",
-      "React Native",
+      "Meta APIs",
+      "Google APIs",
+      "Gemini API",
+      "Ollama / Local LLMs",
+      "n8n",
+      "Facebook Lead Ads",
+      "Instagram & Facebook Analytics",
+      "WhatsApp Automation",
+      "Webhook Integrations",
+      "Third-Party APIs",
     ],
   },
-];
-
-const BACKEND_GAPS = [
-  "Docker",
-  "Redis / caching",
-  "Testing with Jest or Supertest",
-  "CI/CD pipelines",
-  "PostgreSQL / SQL",
 ];
 
 function SkillsSection() {
@@ -613,47 +627,6 @@ function SkillsSection() {
           })}
         </motion.div>
 
-        {/* <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="mt-6 rounded-xl border border-border bg-card p-6 shadow-card"
-        >
-          <div className="flex items-start gap-3">
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{
-                background:
-                  "color-mix(in oklch, var(--primary-color) 12%, transparent)",
-              }}
-            >
-              <Wrench className="w-4 h-4 text-cyan" />
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan">
-                Worth Adding
-              </p>
-              <h3 className="mt-2 font-semibold text-foreground">
-                Backend role boosters
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                These are the biggest additions that would strengthen your
-                backend positioning for more demanding roles.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {BACKEND_GAPS.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 rounded-full text-xs font-medium border border-border text-foreground/80 bg-muted/50"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
@@ -661,54 +634,71 @@ function SkillsSection() {
 
 const PROJECTS = [
   {
-    title: "Grocery Delivery Platform",
-    emoji: "🛒",
+    title: "Samarpan Hospital — Healthcare Platform",
     description:
-      "Full-stack grocery delivery app with customer, seller, and admin panels. Built backend architecture for real-time inventory, order management, and multi-vendor support.",
-    role: "Backend Developer — REST APIs, admin panel, seller system",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
+      "Production healthcare website and custom management panel for handling doctors, services, content, leads, analytics, branding, and social integrations.",
+    role:
+      "Full Stack Developer — website, backend APIs, admin panel, integrations",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Meta APIs"],
     features: [
-      "Multi-vendor system",
-      "Order tracking",
-      "Admin dashboard",
-      "JWT Auth",
+      "Doctor & service management",
+      "Lead management",
+      "Content administration",
+      "Analytics dashboards",
+      "Dynamic branding & colors",
+      "Meta account integrations",
+      "Facebook Lead Ads",
+      "Instagram & Facebook analytics",
     ],
-    impact: "Production-ready, scalable multi-user system",
+    impact:
+      "Centralized healthcare web presence and administrative operations into a single platform.",
   },
   {
-    title: "Event Management Platform",
-    emoji: "🎪",
+    title: "Fivlia — Multi-Vendor Commerce Platform",
     description:
-      "Event discovery and booking platform with admin control panel. Developed all backend APIs and event management logic for seamless user and admin workflows.",
-    role: "Backend Developer — API development, admin panel",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
-    features: ["Event CRUD", "User registration", "Admin panel", "Auth flow"],
-    impact: "Live admin + user workflow for managing events at scale",
+      "Production e-commerce platform with customer, seller, and admin experiences covering catalog, inventory, orders, payments, delivery logic, and operational workflows.",
+    role:
+      "MERN Stack Developer — backend architecture, APIs, seller/admin systems",
+    tech: ["Node.js", "Express.js", "MongoDB", "Mongoose", "React.js"],
+    features: [
+      "Multi-vendor catalog",
+      "Seller & stock management",
+      "Order workflows",
+      "Admin operations",
+      "Payment & delivery logic",
+      "Search & product APIs",
+    ],
+    impact:
+      "Real-world commerce infrastructure supporting multiple roles and interconnected operational workflows.",
   },
   {
-    title: "Fivlia Connect",
-    emoji: "📋",
+    title: "Business Review & WhatsApp Automation",
     description:
-      "Classified ads platform similar to OLX. Built the full API layer and admin panel for listing management, user control, and content moderation.",
-    role: "Backend Developer — REST APIs, admin panel",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
+      "Business automation platform for managing review responses and customer conversations across connected business accounts, with AI-assisted responses and automated workflow execution.",
+    role:
+      "Full Stack & Automation Developer — backend orchestration, integrations, AI workflows",
+    tech: ["Node.js", "Express.js", "n8n", "Gemini API", "Ollama", "Google APIs"],
     features: [
-      "Listing management",
-      "User auth",
-      "Admin moderation",
-      "Search APIs",
+      "Multi-business account management",
+      "Automated review responses",
+      "AI-assisted reply generation",
+      "WhatsApp conversational automation",
+      "Webhook-based messaging workflows",
+      "Backend-driven workflow orchestration",
     ],
-    impact: "Multi-user platform with real-world classified ad flows",
+    impact:
+      "Reusable automation architecture for business-specific communication and review handling without duplicating the underlying workflow.",
   },
 ];
 
 const EXP_POINTS = [
-  "Built and maintained REST APIs using Node.js and Express.js",
-  "Designed MongoDB schemas and backend architecture for production applications",
-  "Developed backend systems for grocery delivery, event management, and classified ad platforms",
-  "Implemented JWT authentication and role-based access control (RBAC)",
-  "Integrated React.js frontends with Node.js/Express.js backend APIs",
-  "Debugged and optimized production-level systems for performance and reliability",
+  "Built and maintained production REST APIs using Node.js, Express.js, MongoDB, and Mongoose",
+  "Developed a healthcare website and custom admin platform covering doctors, services, content, leads, analytics, and operational workflows",
+  "Worked with Meta account integrations, Facebook Lead Ads, Instagram/Facebook analytics, and business data workflows",
+  "Built automation workflows using n8n, webhooks, AI services, and custom backend orchestration for review and communication use cases",
+  "Worked with Google APIs, Gemini-based workflows, and local LLM tooling such as Ollama for AI-enabled application features",
+  "Built frontend and admin experiences with React.js and worked across modern JavaScript application architectures including Next.js and Vue.js",
+  "Implemented authentication, role-based systems, dynamic website/panel theming, third-party integrations, and production debugging",
 ];
 
 const EDU_POINTS = [
@@ -737,7 +727,6 @@ function ProjectsSection() {
               data-ocid={`projects.item.${i + 1}`}
               className="rounded-2xl border border-border bg-card p-6 shadow-card hover:border-cyan hover:scale-[1.02] hover:shadow-lg transition-all duration-300 flex flex-col"
             >
-              <div className="text-3xl mb-4">{project.emoji}</div>
               <h3 className="text-lg font-bold text-foreground mb-2">
                 {project.title}
               </h3>
@@ -815,7 +804,7 @@ function ExperienceSection() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
             <h3 className="text-xl font-bold text-foreground">
-              MERN Stack Developer
+              Full Stack Developer
             </h3>
             <span className="hidden sm:block text-muted-foreground">·</span>
             <span className="text-cyan font-medium">
@@ -823,7 +812,7 @@ function ExperienceSection() {
             </span>
           </div>
           <p className="text-muted-foreground text-sm mb-6">
-            Full-time · Backend-focused role
+            Full-time · Full-stack MERN, backend & automation
           </p>
           <ul className="space-y-3">
             {EXP_POINTS.map((point) => (
@@ -858,13 +847,13 @@ function EducationSection() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
             <h3 className="text-xl font-bold text-foreground">
-              Diploma in Full Stack Development
+              Full Stack Development Training
             </h3>
             <span className="hidden sm:block text-muted-foreground">·</span>
             <span className="text-cyan font-medium">1 Year</span>
           </div>
           <p className="text-muted-foreground text-sm mb-6">
-            Full Stack Development Program
+            Full-Stack & Mobile Application Development
           </p>
           <ul className="space-y-3">
             {EDU_POINTS.map((point) => (
@@ -906,7 +895,7 @@ function CTASection() {
             Let's build something impactful
           </h2>
           <p className="text-white/75 text-lg mb-8">
-            Open for MERN / Backend roles and freelance opportunities
+            Open for full-stack, backend, product engineering, and automation-focused opportunities
           </p>
           <button
             type="button"
@@ -1009,46 +998,62 @@ function ContactSection() {
 
 function Footer() {
   const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-border bg-card mt-8">
-      <div className="max-w-[1200px] mx-auto px-6 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-border mt-8">
+      <div className="max-w-[1200px] mx-auto px-6 py-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+
           {/* Left */}
-          <div>
-            <p className="text-foreground font-bold text-lg">Goutam Kathuria</p>
-            <p className="text-muted-foreground text-sm mt-0.5">
-              MERN Stack Developer
-            </p>
-          </div>
+          <button
+            type="button"
+            onClick={() => scrollTo("home")}
+            className="text-base font-bold tracking-tight"
+            data-cursor-hover
+          >
+            <span className="text-cyan">GK</span>
+            <span className="text-foreground">.DEV</span>
+          </button>
 
           {/* Center */}
-          <div className="text-center">
-            <p className="text-muted-foreground text-xs">
-              © {year}. Built and designed by Goutam Kathuria.
-            </p>
-          </div>
+          <p className="text-xs text-muted-foreground text-center">
+            © {year} Goutam Kathuria · Full Stack Developer
+          </p>
 
           {/* Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href="https://github.com/Goutam-Kathuria"
               target="_blank"
               rel="noopener noreferrer"
-              data-cursor-hover
+              aria-label="GitHub"
               className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all"
+              data-cursor-hover
             >
               <Github className="w-4 h-4" />
             </a>
+
             <a
               href="https://www.linkedin.com/in/goutam-kathuria-18915335b"
               target="_blank"
               rel="noopener noreferrer"
-              data-cursor-hover
+              aria-label="LinkedIn"
               className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all"
+              data-cursor-hover
             >
               <Linkedin className="w-4 h-4" />
             </a>
+
+            <a
+              href="mailto:goutam.kathuria@gmail.com"
+              aria-label="Email"
+              className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all"
+              data-cursor-hover
+            >
+              <Mail className="w-4 h-4" />
+            </a>
           </div>
+
         </div>
       </div>
     </footer>

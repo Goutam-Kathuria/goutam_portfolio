@@ -14083,11 +14083,11 @@ const ChevronRight = createLucideIcon("chevron-right", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "m18 16 4-4-4-4", key: "1inbqp" }],
-  ["path", { d: "m6 8-4 4 4 4", key: "15zrgr" }],
-  ["path", { d: "m14.5 4-5 16", key: "e7oirm" }]
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
+  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
+  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
 ];
-const CodeXml = createLucideIcon("code-xml", __iconNode$c);
+const Database = createLucideIcon("database", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -14095,11 +14095,11 @@ const CodeXml = createLucideIcon("code-xml", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
-  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
-  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
+  ["path", { d: "M12 15V3", key: "m9g1x1" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Database = createLucideIcon("database", __iconNode$b);
+const Download = createLucideIcon("download", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -22369,20 +22369,23 @@ function LoadingScreen() {
   ) : null });
 }
 const PROFILE_IMAGE = "/assets/uploads/me.png";
+const RESUME_PATH = "/resume.pdf";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" }
 ];
 const SECTION_IDS = [
   "home",
-  "about",
-  "skills",
   "projects",
   "experience",
+  "skills",
+  "about",
+  "education",
   "contact"
 ];
 const containerVariants = {
@@ -22630,7 +22633,7 @@ function HeroSection() {
               animate: { opacity: 1, y: 0 },
               transition: { delay: 0.4, duration: 0.6 },
               className: "text-lg md:text-xl font-medium text-white/80 mb-4 max-w-lg",
-              children: "MERN Stack Developer specializing in scalable backend systems"
+              children: "Full Stack Developer — React.js, Next.js, Vue.js, Node.js & APIs"
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22640,7 +22643,7 @@ function HeroSection() {
               animate: { opacity: 1, y: 0 },
               transition: { delay: 0.5, duration: 0.6 },
               className: "text-white/65 text-base mb-8 max-w-md leading-relaxed",
-              children: "I build efficient APIs, backend logic, and real-world applications"
+              children: "I build production web applications, backend systems, admin panels, AI integrations, and workflow automation."
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -22666,6 +22669,20 @@ function HeroSection() {
                     children: [
                       "View Projects ",
                       /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-4 h-4" })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "a",
+                  {
+                    href: RESUME_PATH,
+                    download: "Goutam-Kathuria-Resume.pdf",
+                    "data-ocid": "hero.resume_button",
+                    "data-cursor-hover": true,
+                    className: "inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 bg-white/[0.04] text-white font-semibold text-sm hover:border-cyan hover:text-cyan hover:scale-[1.03] transition-all",
+                    children: [
+                      "Download Resume ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4" })
                     ]
                   }
                 ),
@@ -22723,6 +22740,24 @@ function HeroSection() {
     }
   ) }) });
 }
+const ABOUT_HIGHLIGHTS = [
+  {
+    label: "Full Stack Development",
+    text: "Build production applications across React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB."
+  },
+  {
+    label: "Production Systems",
+    text: "Worked on healthcare, commerce, business management, admin dashboards, and automation products with real operational workflows."
+  },
+  {
+    label: "Integrations & Automation",
+    text: "Worked with Meta and Google integrations, lead platforms, social analytics, n8n workflows, webhooks, and business-specific automation."
+  },
+  {
+    label: "AI & Product Engineering",
+    text: "Built AI-enabled workflows using hosted models and local LLM tooling, alongside backend APIs, dynamic theming, analytics, and custom admin systems."
+  }
+];
 function AboutSection() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about", className: "py-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeading, { children: "About Me" }),
@@ -22747,27 +22782,28 @@ function AboutSection() {
             }
           ) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { variants: itemVariants, className: "flex-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-foreground mb-4", children: "MERN Stack Developer · Backend Specialist" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-foreground/75 leading-relaxed mb-4", children: "I'm a MERN Stack Developer with 1 year of professional experience, focused on building scalable backend systems, REST APIs, and production-level applications." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-muted-foreground leading-relaxed mb-4", children: [
-              "I've worked on real-world platforms including a",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan font-medium", children: "grocery delivery platform" }),
-              " ",
-              "(like Blinkit/Zomato) with admin & seller panels, an",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan font-medium", children: "event-based platform" }),
-              " ",
-              "with full admin control, and",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan font-medium", children: "Fivlia Connect" }),
-              " — an OLX-like classified ads system."
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground leading-relaxed", children: "I'm a fast learner who continuously improves through real-world projects, with a strong focus on backend architecture, API design, and system optimization." }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6 flex flex-wrap gap-4", children: [
-              { label: "Experience", value: "1 Year" },
-              { label: "Projects", value: "3+ Production" },
-              { label: "Focus", value: "Backend & APIs" }
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-semibold text-foreground mb-4", children: "Full Stack Developer with hands-on production experience across web platforms, admin systems, integrations, and automation" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-3", children: ABOUT_HIGHLIGHTS.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "mt-1.5 h-2 w-2 rounded-full flex-shrink-0",
+                  style: { backgroundColor: "var(--primary-color)" }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm leading-relaxed", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-semibold text-foreground", children: [
+                  item.label,
+                  ":"
+                ] }),
+                " ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: item.text })
+              ] })
+            ] }, item.label)) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
+              { label: "Experience", value: "1+ Year" },
+              { label: "Focus", value: "Full Stack + APIs" },
+              { label: "Specialization", value: "AI, Integrations & Automation" }
             ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
@@ -22785,38 +22821,62 @@ function AboutSection() {
     )
   ] }) });
 }
-const SKILLS = [
+const SKILL_GROUPS = [
   {
-    category: "Backend",
+    level: "Core",
     icon: Server,
+    title: "Full Stack Engineering",
+    summary: "Building production web applications, backend services, APIs, and data-driven admin systems.",
     skills: [
+      "JavaScript (ES6+)",
+      "React.js",
+      "Next.js",
+      "Vue.js",
       "Node.js",
       "Express.js",
-      "REST APIs",
-      "JWT Authentication",
-      "bcrypt",
-      "Middleware"
+      "MongoDB",
+      "Mongoose",
+      "REST APIs"
     ]
   },
   {
-    category: "Frontend",
-    icon: CodeXml,
-    skills: ["React.js", "HTML5", "CSS3", "JavaScript (ES6+)", "Tailwind CSS"]
-  },
-  {
-    category: "Database",
+    level: "Production",
     icon: Database,
-    skills: ["MongoDB", "Mongoose ODM", "Database Schema Design"]
+    title: "Product & System Development",
+    summary: "Hands-on work across business platforms, dashboards, CMS-style controls, and complex application workflows.",
+    skills: [
+      "Admin Panels",
+      "Analytics Dashboards",
+      "Dynamic Theming",
+      "Role-Based Systems",
+      "Multi-Vendor Systems",
+      "Payment Integrations",
+      "AWS S3",
+      "Database Architecture"
+    ]
   },
   {
-    category: "Tools",
+    level: "Integrations",
     icon: Wrench,
-    skills: ["Git", "GitHub", "Postman", "VS Code", "npm"]
+    title: "AI, APIs & Automation",
+    summary: "Connecting external platforms and AI services to custom backend workflows through APIs, webhooks, and automation engines.",
+    skills: [
+      "Meta APIs",
+      "Google APIs",
+      "Gemini API",
+      "Ollama / Local LLMs",
+      "n8n",
+      "Facebook Lead Ads",
+      "Instagram & Facebook Analytics",
+      "WhatsApp Automation",
+      "Webhook Integrations",
+      "Third-Party APIs"
+    ]
   }
 ];
 function SkillsSection() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "skills", className: "py-16", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1200px] mx-auto px-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeading, { children: "Technical Skills" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(SectionHeading, { children: "Technical Strengths" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       motion.div,
       {
@@ -22824,16 +22884,17 @@ function SkillsSection() {
         initial: "hidden",
         whileInView: "visible",
         viewport: { once: true, margin: "-60px" },
-        className: "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5",
-        children: SKILLS.map((group) => {
+        className: "grid grid-cols-1 xl:grid-cols-3 gap-5",
+        children: SKILL_GROUPS.map((group) => {
           const Icon2 = group.icon;
+          const isCore = group.level === "Core";
           return /* @__PURE__ */ jsxRuntimeExports.jsxs(
             motion.div,
             {
               variants: itemVariants,
-              className: "rounded-xl border border-border bg-card p-6 shadow-card hover:border-cyan transition-colors group cursor-default",
+              className: `rounded-xl border bg-card p-6 shadow-card transition-colors group cursor-default ${isCore ? "border-cyan" : "border-border hover:border-cyan"}`,
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3 mb-5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "div",
                     {
@@ -22844,7 +22905,11 @@ function SkillsSection() {
                       children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-4 h-4 text-cyan" })
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold text-foreground", children: group.category })
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold uppercase tracking-[0.28em] text-cyan", children: group.level }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "mt-2 font-semibold text-foreground", children: group.title }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-2 text-sm leading-relaxed text-muted-foreground", children: group.summary })
+                  ] })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: group.skills.map((skill) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
@@ -22859,7 +22924,7 @@ function SkillsSection() {
                 )) })
               ]
             },
-            group.category
+            group.level
           );
         })
       }
@@ -22868,50 +22933,61 @@ function SkillsSection() {
 }
 const PROJECTS = [
   {
-    title: "Grocery Delivery Platform",
-    emoji: "🛒",
-    description: "Full-stack grocery delivery app with customer, seller, and admin panels. Built backend architecture for real-time inventory, order management, and multi-vendor support.",
-    role: "Backend Developer — REST APIs, admin panel, seller system",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
+    title: "Samarpan Hospital — Healthcare Platform",
+    description: "Production healthcare website and custom management panel for handling doctors, services, content, leads, analytics, branding, and social integrations.",
+    role: "Full Stack Developer — website, backend APIs, admin panel, integrations",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Meta APIs"],
     features: [
-      "Multi-vendor system",
-      "Order tracking",
-      "Admin dashboard",
-      "JWT Auth"
+      "Doctor & service management",
+      "Lead management",
+      "Content administration",
+      "Analytics dashboards",
+      "Dynamic branding & colors",
+      "Meta account integrations",
+      "Facebook Lead Ads",
+      "Instagram & Facebook analytics"
     ],
-    impact: "Production-ready, scalable multi-user system"
+    impact: "Centralized healthcare web presence and administrative operations into a single platform."
   },
   {
-    title: "Event Management Platform",
-    emoji: "🎪",
-    description: "Event discovery and booking platform with admin control panel. Developed all backend APIs and event management logic for seamless user and admin workflows.",
-    role: "Backend Developer — API development, admin panel",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
-    features: ["Event CRUD", "User registration", "Admin panel", "Auth flow"],
-    impact: "Live admin + user workflow for managing events at scale"
+    title: "Fivlia — Multi-Vendor Commerce Platform",
+    description: "Production e-commerce platform with customer, seller, and admin experiences covering catalog, inventory, orders, payments, delivery logic, and operational workflows.",
+    role: "MERN Stack Developer — backend architecture, APIs, seller/admin systems",
+    tech: ["Node.js", "Express.js", "MongoDB", "Mongoose", "React.js"],
+    features: [
+      "Multi-vendor catalog",
+      "Seller & stock management",
+      "Order workflows",
+      "Admin operations",
+      "Payment & delivery logic",
+      "Search & product APIs"
+    ],
+    impact: "Real-world commerce infrastructure supporting multiple roles and interconnected operational workflows."
   },
   {
-    title: "Fivlia Connect",
-    emoji: "📋",
-    description: "Classified ads platform similar to OLX. Built the full API layer and admin panel for listing management, user control, and content moderation.",
-    role: "Backend Developer — REST APIs, admin panel",
-    tech: ["Node.js", "Express.js", "MongoDB", "React.js", "JWT"],
+    title: "Business Review & WhatsApp Automation",
+    description: "Business automation platform for managing review responses and customer conversations across connected business accounts, with AI-assisted responses and automated workflow execution.",
+    role: "Full Stack & Automation Developer — backend orchestration, integrations, AI workflows",
+    tech: ["Node.js", "Express.js", "n8n", "Gemini API", "Ollama", "Google APIs"],
     features: [
-      "Listing management",
-      "User auth",
-      "Admin moderation",
-      "Search APIs"
+      "Multi-business account management",
+      "Automated review responses",
+      "AI-assisted reply generation",
+      "WhatsApp conversational automation",
+      "Webhook-based messaging workflows",
+      "Backend-driven workflow orchestration"
     ],
-    impact: "Multi-user platform with real-world classified ad flows"
+    impact: "Reusable automation architecture for business-specific communication and review handling without duplicating the underlying workflow."
   }
 ];
 const EXP_POINTS = [
-  "Built and maintained REST APIs using Node.js and Express.js",
-  "Designed MongoDB schemas and backend architecture for production applications",
-  "Developed backend systems for grocery delivery, event management, and classified ad platforms",
-  "Implemented JWT authentication and role-based access control (RBAC)",
-  "Integrated React.js frontends with Node.js/Express.js backend APIs",
-  "Debugged and optimized production-level systems for performance and reliability"
+  "Built and maintained production REST APIs using Node.js, Express.js, MongoDB, and Mongoose",
+  "Developed a healthcare website and custom admin platform covering doctors, services, content, leads, analytics, and operational workflows",
+  "Worked with Meta account integrations, Facebook Lead Ads, Instagram/Facebook analytics, and business data workflows",
+  "Built automation workflows using n8n, webhooks, AI services, and custom backend orchestration for review and communication use cases",
+  "Worked with Google APIs, Gemini-based workflows, and local LLM tooling such as Ollama for AI-enabled application features",
+  "Built frontend and admin experiences with React.js and worked across modern JavaScript application architectures including Next.js and Vue.js",
+  "Implemented authentication, role-based systems, dynamic website/panel theming, third-party integrations, and production debugging"
 ];
 const EDU_POINTS = [
   "MERN Stack fundamentals — MongoDB, Express.js, React.js, Node.js",
@@ -22937,7 +23013,6 @@ function ProjectsSection() {
             "data-ocid": `projects.item.${i + 1}`,
             className: "rounded-2xl border border-border bg-card p-6 shadow-card hover:border-cyan hover:scale-[1.02] hover:shadow-lg transition-all duration-300 flex flex-col",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-3xl mb-4", children: project.emoji }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-foreground mb-2", children: project.title }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm leading-relaxed mb-4 flex-1", children: project.description }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4", children: [
@@ -22995,11 +23070,11 @@ function ExperienceSection() {
         className: "rounded-xl border border-border bg-card p-8 shadow-card border-l-4 border-l-cyan",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-2 mb-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-foreground", children: "MERN Stack Developer" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-foreground", children: "Full Stack Developer" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:block text-muted-foreground", children: "·" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan font-medium", children: "1 Year Professional Experience" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm mb-6", children: "Full-time · Backend-focused role" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm mb-6", children: "Full-time · Full-stack MERN, backend & automation" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-3", children: EXP_POINTS.map((point) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "div",
@@ -23028,11 +23103,11 @@ function EducationSection() {
         className: "rounded-xl border border-border bg-card p-8 shadow-card border-l-4 border-l-cyan",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-2 mb-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-foreground", children: "Diploma in Full Stack Development" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold text-foreground", children: "Full Stack Development Training" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:block text-muted-foreground", children: "·" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan font-medium", children: "1 Year" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm mb-6", children: "Full Stack Development Program" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm mb-6", children: "Full-Stack & Mobile Application Development" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-3", children: EDU_POINTS.map((point) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-3", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               "div",
@@ -23062,8 +23137,8 @@ function CTASection() {
         boxShadow: "0 0 40px color-mix(in oklch, var(--primary-color) 10%, transparent)"
       },
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-extrabold text-foreground mb-4", children: "Let's build something impactful" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-foreground/75 text-lg mb-8", children: "Open for MERN / Backend roles and freelance opportunities" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-4xl font-extrabold text-white mb-4", children: "Let's build something impactful" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-white/75 text-lg mb-8", children: "Open for full-stack, backend, product engineering, and automation-focused opportunities" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "button",
           {
@@ -23161,25 +23236,35 @@ function ContactSection() {
 }
 function Footer() {
   const year = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "border-t border-border bg-card mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-6 py-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row items-center justify-between gap-6", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-foreground font-bold text-lg", children: "Goutam Kathuria" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm mt-0.5", children: "MERN Stack Developer" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-muted-foreground text-xs", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "border-t border-border mt-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-[1200px] mx-auto px-6 py-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row items-center justify-between gap-4", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        type: "button",
+        onClick: () => scrollTo("home"),
+        className: "text-base font-bold tracking-tight",
+        "data-cursor-hover": true,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-cyan", children: "GK" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: ".DEV" })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground text-center", children: [
       "© ",
       year,
-      ". Built and designed by Goutam Kathuria."
-    ] }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+      " Goutam Kathuria · Full Stack Developer"
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "a",
         {
           href: "https://github.com/Goutam-Kathuria",
           target: "_blank",
           rel: "noopener noreferrer",
-          "data-cursor-hover": true,
+          "aria-label": "GitHub",
           className: "w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all",
+          "data-cursor-hover": true,
           children: /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-4 h-4" })
         }
       ),
@@ -23189,9 +23274,20 @@ function Footer() {
           href: "https://www.linkedin.com/in/goutam-kathuria-18915335b",
           target: "_blank",
           rel: "noopener noreferrer",
-          "data-cursor-hover": true,
+          "aria-label": "LinkedIn",
           className: "w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all",
+          "data-cursor-hover": true,
           children: /* @__PURE__ */ jsxRuntimeExports.jsx(Linkedin, { className: "w-4 h-4" })
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "a",
+        {
+          href: "mailto:goutam.kathuria@gmail.com",
+          "aria-label": "Email",
+          className: "w-9 h-9 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-cyan hover:border-cyan transition-all",
+          "data-cursor-hover": true,
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-4 h-4" })
         }
       )
     ] })
@@ -23228,12 +23324,13 @@ function App() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(HeroSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(AboutSection, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SkillsSection, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ProjectsSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(ExperienceSection, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SkillsSection, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AboutSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SectionSeparator, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(EducationSection, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CTASection, {}),
